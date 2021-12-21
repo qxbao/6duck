@@ -1,0 +1,83 @@
+doctype html
+html
+    head
+        include important.pug
+        title SixDuck • Built by Switck
+    body
+        .container.px-4
+            .py-5.text-center
+                a(href='/' style='text-decoration: none')
+                    span.display-3.fw-bold.fontPS2.text-dark 6DUCK<
+            .d-flex.flex-column.justify-content-center(style="min-height: 75vh!important;")
+                .row
+                    .col-lg.col-12.mb-5
+                        p.text-left.h1 Về chúng tôi:
+                        ul
+                            li.my-4
+                                p.fw-normal sở hữu vô số tính năng thú vị chờ bạn khám phá.
+                            li.my-4
+                                p.fw-normal là một dự án open-source phi lợi nhuận, công khai, minh bạch & không quảng cáo.
+                            li.my-4
+                                p.fw-normal bảo mật tốt, độ tin cậy cao.
+                            li.my-4
+                                p.fw-normal UX/UI thân thiện & hiện đại.
+                    .col-lg.d-flex.flex-column.align-items-center.m-auto
+                        .my-auto
+                            button.butt.w-100.mb-3.d-flex.justify-content-center.p-2.black-button
+                                p.h3.px-5.py-2.mb-0.fw-light Đăng nhập
+                            button.butt.w-100.mb-3.mx-auto.p-2.white-button
+                                p.h3.px-5.py-2.fw-normal.mb-0 Đăng ký
+                            a(href='regcode' style='text-decoration: none')
+                                button.butt.w-100.mb-3.mx-auto.p-2.bg-white.border-0 
+                                    u Regcode
+        hr.container.w-75.mx-auto.mb-5
+        .container.px-4
+            .row
+                .col-lg-7.col-12
+                    #gioi-thieu.mb-5
+                        h1 I. Giới thiệu
+                        p Dự án được khởi tạo vào ngày 19/12/2021, dù là 5 ngày trước Noel nhưng
+                            b  @Switck
+                            |  vẫn chưa có người yêu, rất tủi thân và đang chuẩn bị cho kế hoạch Noel 1 mình. À quên mất là năm nào chẳng vậy, cũng không có gì đặc biệt...
+                        p Xin lỗi vì lạc đề một cách cố ý. Về cơ bản, web này giống như một dự án lớn thật lớn của mình (sau rất nhiều dự án mình đã drop vì lười,
+                            |  hỏng ổ cứng + quên backup, vân vân và mây mây) gồm nhiều các dự án nhỏ khác (các tiện ích, tính năng built-in vào web). Không biết liệu sẽ
+                            |  có một ngày mình chạy được đống code này trên một domain thật sự hay không nữa... Thôi thì sao cũng được, lo chuyện bây giờ đã.
+                    #team.mb-5
+                        h1 II. Đội ngũ phát triển
+                        p Dù nghe khá là buồn nhưng thật sự... đây là dự án một thành viên chỉ gồm một mình mình. Có lẽ bởi tính cách lập dị, muốn được một mình làm chủ
+                            |  từng dòng code của mình hoặc cũng có thể do mình không nỡ để ai chỉnh sửa, phá hoại đứa con tinh thần này... Sao cũng được, bạn chỉ cần biết đây là dự án
+                            |  một thành viên thôi là được. Điều này đồng nghĩa với thiếu nhân lực để làm nhiều việc, giảm hiệu suất công việc nhưng sẽ dễ dàng trong khâu gỡ lỗi hơn (vì có ai hiểu 
+                            |  code của mình hơn mình nữa, hơ hơ). Tuy nhiên, đừng vì vậy mà ngại ngần liên hệ mình nếu tìm được bug ở đâu đó. Dưới đây là thông tin liên lạc của mình:
+                            ul
+                                li Email: 
+                                    a(href="mailto:dquanbao@gmail.com" target="_blank") dquanbao@gmail.com
+                                li Facebook: 
+                                    a(href="https://www.facebook.com/q2theb" target="_blank") Quan Bao
+                                li Instagram: 
+                                    a(href="https://www.instagram.com/qnba0" target="_blank") @qnba0
+                                li Hotline:
+                                    i  không hỗ trợ
+                        p Có thể web sẽ có tính năng chat. Trường hợp này, bạn có thể liên hệ mình dưới user
+                            b  @admin
+                    #latest-release.mb-5
+                        h1 III. Mục tiêu hiện tại
+                        p Dựng được cái web hẳn hoi đã rồi tính gì tính sau
+                .col-lg.col-12
+                    h2.text-center Tại sao bạn cần đăng nhập
+                    p Như bạn đã biết, đây là dự án cá nhân mang tính chất phi lợi nhuận, đồng nghĩa việc quá nhiều lưu lượng truy cập chẳng giúp ích gì cho mình ngoài làm quá tải server cả. Vậy nên, thay vì
+                        |  sử dụng thả cửa thì bạn cần nhận một Regcode để đăng ký tài khoản cho riêng mình. Vậy Regcode là gì?
+                    p 
+                        b Regcode (Registration code)
+                        |  là một đoạn mã có hạn dùng 24 giờ được sử dụng để đăng ký tài khoản mới tại 6Duck. Để nhận Regcode, bạn cần
+                        |  xác minh danh tính và gửi kết quả tới server. Nếu thông tin của bạn được xác nhận hợp lệ, Regcode sẽ hiển thị ngay lập tức trên màn hình.
+                        |  Tuy nhiên, nếu một ngày đẹp trời tôi kiểm tra và thấy thông tin đăng ký vớ vẩn vẫn qua mắt được thuật toán, tài khoản của bạn sẽ bị suspend vô thời hạn.
+                    p Một điều quan trọng nữa: Mỗi ngày sẽ giới hạn 
+                        b 30
+                        |  Regcode được phát ra 
+                        i (giới hạn có thể được chỉnh sửa và update tại đây)
+                        |  . Vậy nên, nếu như hôm nay bạn vẫn chưa đăng ký thành công, quay trở lại đăng ký vào ngày mai sẽ là một sự lựa
+                        |  chọn hay.
+        .bg-black.mb-0.mt-5.py-3.px-3.text-white.text-center.fw-lighter
+            p.mb-0 //Switck//
+        script.
+            

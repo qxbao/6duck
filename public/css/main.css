@@ -1,0 +1,25 @@
+@import "font.css";
+
+body{
+    font-family:Fira Sans;
+}
+
+.black-button{
+    border:none;
+    background:black;
+    color:white;
+}
+.white-button{
+    border: #909BAA solid 0.5px;
+    background: white;
+    color:black;
+}
+.butt{
+    transition: 0.2s all;
+}
+.butt:hover{
+    opacity: 0.7;
+}
+.butt:active{
+    opacity: 0.9;
+}
