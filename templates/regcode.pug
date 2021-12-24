@@ -2,7 +2,6 @@ doctype html
 html
     head
         include important.pug
-        script(src="/script/regcode.js")
         title SixDuck • Regcode Generator
         style.
             @keyframes spinner{
@@ -21,22 +20,28 @@ html
                         a(href='/' style='text-decoration: none').text-white.bg-black.px-3.py-2
                             i.fa-solid.fa-caret-left
                             span.ms-1 Quay lại
-                    h1.text-centers.mb-5 Regcode Generator
-                    form(action="/regcode" method="post")
+                    h1 Regcode Generator
+                    p.mb-5.text-secondary Số regcode còn lại hôm nay: 
+                        b.text-black
+                            span#today
+                    form#regcodeForm
                         .row.g-3.align-items-center.mb-3
                             .col-auto
-                                label.col-form-label Họ và tên
+                                label.col-form-label.fw-bold Họ và tên:
                             .col
-                                input(placeholder="Nguyễn Văn A").w-100.form-control#fullname    
-                            p
-                                i
-                                    span.form-text Tiếng Việt có dấu, viết hoa đầy đủ.
+                                input(placeholder="Nguyen Van A").w-100.form-control.fontCode#fullname    
+                        p
+                            i
+                                span.form-text Không dấu, viết hoa đầy đủ.
                             .mb-4
-                                label.col-form-label Facebook username
+                                label.col-form-label.fw-bold Facebook username:
                                 .input-group
                                     .input-group-text @
-                                    input(placeholder="nguyen.vana.1001").form-control#facebookusr
-                        button(type='button' data-toggle="modal" data-target="#status-modal").btn.btn-dark.w-100#checkValid Xác minh thông tin
+                                    input(placeholder="nguyen.vana.1001").form-control.fontCode#facebookusr
+                                p
+                                    i
+                                        span.form-text Ví dụ: https://facebook.com/example => example là username
+                        button(type='submit' data-toggle="modal").btn.btn-dark.w-100#checkValid Xác minh thông tin
         .modal.fade#status-modal(tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="statusLabel" aria-hidden="true")
             .modal-dialog.modal-dialog-centered
                 .modal-content.rounded-0.border-0
@@ -50,3 +55,4 @@ html
                                 i null
                     .modal-footer
                         button.btn.btn-dark#close-reg(data-dismiss="modal" disabled) Đóng
+        script(src="/script/regcode.js")

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 .fontFira{
     font-family: 'Fira Sans', sans-serif;
@@ -6,4 +7,8 @@
 
 .fontPS2{
     font-family: 'Press Start 2P', cursive;
+}
+
+.fontCode{
+    font-family: "Space Mono", monospace;
 }

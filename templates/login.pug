@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        include important.pug
+        title SixDuck • Regcode Generator
+        style.
+            @keyframes spinner{
+                from {transform: rotate(0deg)}
+                to {transform: rotate(360deg)}
+            } 
+            #spinner{
+                color:#757575;
+                animation: spinner 2s linear 0s infinite;
+            }
+    body
+        .container.d-flex.flex-column.justify-content-center.min-vh-100
+            .row
+                .col-10.col-md-8.col-xl-6.m-auto.border.border-2.border-dark.py-4.px-3
+                    .mb-4
+                        a(href='/' style='text-decoration: none').text-white.bg-black.px-3.py-2
+                            i.fa-solid.fa-caret-left
+                            span.ms-1 Quay lại
+                    h1.mb-5 Đăng nhập
+                    form#loginForm
+                        .row
+                            .col-12.col-md
+                                label.form-label.fw-bold Username:
+                                input(type="text" placeholder="example.1234" value=username).form-control.fontCode.mb-3#username
+                            .col-12.col-md
+                                label.form-label.fw-bold Password:
+                                input(type="password").form-control.fontCode.mb-5#password
+                        button(type="submit").btn.btn-dark.w-100 Ấn vào tui nè
+        .modal.fade#status-modal(tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="statusLabel" aria-hidden="true")
+            .modal-dialog.modal-dialog-centered
+                .modal-content.rounded-0.border-0
+                    .modal-header
+                        h3.m-auto#statusLabel Trạng thái
+                    .modal-body.py-4
+                        p.text-center#spinner
+                            i.fa-solid.fa-spinner.fs-1
+                        #status-content.d-none.text-center
+                            h5
+                                i null
+                    .modal-footer
+                        button.btn.btn-dark#close-reg(data-dismiss="modal" disabled) Đóng
+        script(src='/script/login.js')

@@ -11,7 +11,7 @@ html
             .d-flex.flex-column.justify-content-center(style="min-height: 75vh!important;")
                 .row
                     .col-lg.col-12.mb-5
-                        p.text-left.h1 Về chúng tôi:
+                        p.text-left.h1 Bọn mình tự tin:
                         ul
                             li.my-4
                                 p.fw-normal sở hữu vô số tính năng thú vị chờ bạn khám phá.
@@ -23,11 +23,13 @@ html
                                 p.fw-normal UX/UI thân thiện & hiện đại.
                     .col-lg.d-flex.flex-column.align-items-center.m-auto
                         .my-auto
-                            button.butt.w-100.mb-3.d-flex.justify-content-center.p-2.black-button
-                                p.h3.px-5.py-2.mb-0.fw-light Đăng nhập
-                            button.butt.w-100.mb-3.mx-auto.p-2.white-button
-                                p.h3.px-5.py-2.fw-normal.mb-0 Đăng ký
-                            a(href='regcode' style='text-decoration: none')
+                            a(href='/login' style='text-decoration: none')
+                                button.butt.w-100.mb-3.d-flex.justify-content-center.p-2.black-button
+                                    p.h3.px-5.py-2.mb-0.fw-light Đăng nhập
+                            a(href='/register' style='text-decoration: none')
+                                button.butt.w-100.mb-3.mx-auto.p-2.white-button
+                                    p.h3.px-5.py-2.fw-normal.mb-0 Đăng ký
+                            a(href='/regcode' style='text-decoration: none')
                                 button.butt.w-100.mb-3.mx-auto.p-2.bg-white.border-0 
                                     u Regcode
         hr.container.w-75.mx-auto.mb-5

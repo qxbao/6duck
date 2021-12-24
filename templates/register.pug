@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        include important.pug
+        title SixDuck • Tạo tài khoản mới
+        style.
+            @keyframes spinner{
+                from {transform: rotate(0deg)}
+                to {transform: rotate(360deg)}
+            } 
+            #spinner{
+                color:#757575;
+                animation: spinner 2s linear 0s infinite;
+            }
+    body
+        .container.d-flex.flex-column.justify-content-center.min-vh-100
+            .row
+                .col-10.col-md-8.col-xl-6.m-auto.border.border-2.border-dark.py-4.px-3
+                    .mb-4
+                        a(href='/' style='text-decoration: none').text-white.bg-black.px-3.py-2
+                            i.fa-solid.fa-caret-left
+                            span.ms-1 Quay lại
+                    h1.mb-5 Tạo tài khoản mới
+                    form#registerForm
+                        .row
+                            .col-auto.pe-0
+                                label.col-form-label.fw-bold REGCODE:
+                            .col
+                                input(value=code).mb-4.w-100.form-control.fontCode#regcode
+                        .row
+                            .col
+                                label.form-label.fw-bold Username:
+                                input(placeholder="example.1234").w-100.form-control.fontCode#username
+                                p
+                                    i
+                                        span.form-text.mb-4 Trên 5, dưới 21 ký tự. Chỉ bao gồm chữ, số và dấu chấm (dấu chấm không đứng đầu và cuối)
+                        .row
+                            .col-12.col-md
+                                label.form-label.fw-bold Password:
+                                input(type="password").w-100.form-control.fontCode#password
+                                p
+                                    i
+                                        span.form-text.mb-4 Trên 8 ký tự là được rồi
+                            .col-12.col-md
+                                label.form-label.fw-bold Re-enter password:
+                                input(type="password").mb-5.w-100.form-control.fontCode#repassword
+                        button(type='submit' data-toggle="modal").btn.btn-dark.w-100.mt-3#checkValid Ấn vào tui đi
+        .modal.fade#status-modal(tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="statusLabel" aria-hidden="true")
+            .modal-dialog.modal-dialog-centered
+                .modal-content.rounded-0.border-0
+                    .modal-header
+                        h3.m-auto#statusLabel Trạng thái
+                    .modal-body.py-4
+                        p.text-center#spinner
+                            i.fa-solid.fa-spinner.fs-1
+                        #status-content.d-none.text-center
+                            h5
+                                i null
+                    .modal-footer
+                        button.btn.btn-dark#close-reg(data-dismiss="modal" disabled) Đóng
+        script(src="/script/register.js")

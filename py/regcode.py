@@ -1,24 +1,25 @@
 import sys
 import pymongo
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 
 name = sys.argv[1]
 fb = sys.argv[2]
 dbpath = sys.argv[3]
+time = datetime.now(timezone.utc)
 
-ho = "Dương|Nguyễn|Trần|Lê|Chử|Lại|Đặng|Hoàng|Huỳnh|Phan|Vũ|Võ|Bùi|Đỗ|Hồ|Ngô|Lý|Phạm|Đức|Lưu|Trịnh|Nghiêm"
+ho = "Duong|Nguyen|Tran|Le|Chu|Lai|Dang|Hoang|Huynh|Phan|Vu|Vo|Bui|Do|Ho|Ha|Ngo|Ly|Li|Pham|Duc|Luu|Trinh|Nghiem"
 
 db = pymongo.MongoClient(dbpath)['webserver']
-usrdata = db['usrdata']
+usrdata = db['regcodes']
 
 def checkValid(a,b):
     isExist = usrdata.find_one({"fb":b})
     if isExist:
         return False
     else:
-        checkFB = re.search("([a-z0-9]+([.][a-z0-9]+)*){5,50}",b)
-        checkName = re.search("^("+ho+")((\s){1}[A-Z]([\w^0-9]){1,5}){1,5}",a)
+        checkFB = re.search("^([a-z0-9]+([.][a-z0-9]+)*){5,50}$",b)
+        checkName = re.search("^("+ho+")((\s){1}[A-Z]([a-z]){1,5}){0,5}$",a)
         if checkFB and checkName:
             return True
         else:
@@ -34,10 +35,7 @@ def codegen(one, two):
     def findValid(q):
         x = usrdata.find_one({"code":q})
         if x:
-            if q + 1 < 9999999999:
-                findValid(q+1)
-            elif q - 1 > 1000000000:
-                findValid(q-1)
+            return findValid(q+1)
         else:
             return q
     return findValid(p_code)
@@ -46,7 +44,7 @@ regcode = codegen(name, fb)
 
 if checkValid(name,fb):
     print("Success")
-    usrdata.insert_one({'tag':'regcode','code': regcode, "name": name, "fb": fb, 'created':datetime.now()})
+    usrdata.insert_one({'code': regcode, "name": name, "fb": fb, 'created':time, 'outdated':False})
     print(regcode)
 else:
     pass
